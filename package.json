@@ -1,0 +1,12 @@
+{
+  "name": "image-format-saver",
+  "version": "1.2.1",
+  "private": true,
+  "description": "Development checks for the Image Format Saver browser extension",
+  "scripts": {
+    "check": "node scripts/check.mjs",
+    "test": "node --test",
+    "package": "powershell -NoProfile -ExecutionPolicy Bypass -File scripts/package.ps1"
+  },
+  "engines": { "node": ">=22" }
+}

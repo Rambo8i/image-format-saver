@@ -1,0 +1,90 @@
+<!doctype html>
+<html lang="de">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Image Format Saver</title>
+  <link rel="stylesheet" href="popup.css">
+</head>
+<body>
+  <main id="popup" class="popup-shell">
+    <div class="pointer-light" aria-hidden="true"></div>
+    <div class="top-highlight" aria-hidden="true"></div>
+    <div class="light-sweep" aria-hidden="true"></div>
+
+    <header class="header entrance entrance-1">
+      <div class="brand-mark" aria-hidden="true">
+        <span class="brand-mark-breath"></span>
+        <span class="brand-mark-sweep"></span>
+        <span class="brand-mark-outline"></span>
+        <span class="brand-mark-fill"></span>
+      </div>
+      <div class="brand-copy">
+        <h1>Image Format Saver</h1>
+        <div class="badges" aria-label="Merkmale">
+          <span class="badge badge-local"><i aria-hidden="true"></i>lokal</span>
+          <span class="badge">kein Tracking</span>
+          <span class="badge">kein Limit</span>
+        </div>
+      </div>
+    </header>
+
+    <div class="divider" aria-hidden="true"></div>
+
+    <section class="format-section entrance entrance-2" aria-labelledby="formatLabel">
+      <h2 id="formatLabel" class="eyebrow">Standardformat</h2>
+      <div id="formatGroup" class="format-group" role="group" aria-label="Standardformat wählen">
+        <span class="format-indicator" aria-hidden="true"></span>
+        <button type="button" data-format="png" aria-pressed="true">PNG</button>
+        <button type="button" data-format="jpg" aria-pressed="false">JPG</button>
+        <button type="button" data-format="webp" aria-pressed="false">WebP</button>
+        <button type="button" data-format="pdf" aria-pressed="false">PDF</button>
+      </div>
+      <p id="formatNote" class="format-note">Verlustfrei · Transparenz bleibt erhalten.</p>
+    </section>
+
+    <div class="detail-stage entrance entrance-3">
+      <section id="qualityPanel" class="detail-card quality-card" aria-labelledby="qualityLabel" hidden>
+        <div class="quality-head">
+          <h2 id="qualityLabel">JPG-Qualität</h2>
+          <output id="qualityValue" for="qualityRange"><strong>92</strong><span>%</span></output>
+        </div>
+        <input id="qualityRange" class="quality-range" type="range" min="10" max="100" step="1" value="92" aria-labelledby="qualityLabel">
+        <div class="range-labels" aria-hidden="true"><span>klein</span><span>scharf</span></div>
+      </section>
+
+      <section id="losslessPanel" class="detail-card lossless-card" aria-live="polite">
+        <span class="info-dot" aria-hidden="true"></span>
+        <div>
+          <h2 id="losslessTitle">Keine Einstellung nötig</h2>
+          <p id="losslessNote">PNG wird verlustfrei ausgegeben — der Qualitätsregler entfällt.</p>
+        </div>
+      </section>
+    </div>
+
+    <section class="toggle-card entrance entrance-4">
+      <div>
+        <h2>Speicherort abfragen</h2>
+        <p>Zeigt bei jedem Bild den „Speichern unter“-Dialog.</p>
+      </div>
+      <button id="saveAs" class="switch" type="button" role="switch" aria-checked="true" aria-label="Speicherort abfragen">
+        <span aria-hidden="true"></span>
+      </button>
+    </section>
+
+    <div class="status-slot">
+      <div id="status" class="status" role="status" aria-live="polite">
+        <span class="status-dot" aria-hidden="true"></span>
+        <span id="statusText"></span>
+      </div>
+    </div>
+
+    <footer class="help entrance entrance-5">
+      <span>Rechtsklick auf ein Bild</span>
+      <span class="arrow" aria-hidden="true">→</span>
+      <strong>Bild speichern als …</strong>
+    </footer>
+  </main>
+  <script src="popup.js"></script>
+</body>
+</html>
